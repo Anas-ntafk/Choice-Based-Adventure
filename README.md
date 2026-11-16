@@ -16,3 +16,6 @@ Goal: The player would go through 4 different pages of choices, The end goal is 
 
 Start: [16 NOV]
 End: [24 NOV]
+
+### Credits 
+- image in the game starting page is from Chatpgt.com
