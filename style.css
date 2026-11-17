@@ -1,18 +1,26 @@
 body {
     background-image: url(/assets/kingdom.webp);
+    margin: 0;
 }
 
 .title-screen {
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: start;
     justify-content: center;
     gap: 40px;
-    padding: 20px 200px;
+    padding: 50px;
+    
 }
 
 .title-screen img {
     width: 400px;
+    margin: 90px auto;
 }
 
-/* .title-screen button */
+.title-screen button {
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin: auto;
+}
