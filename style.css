@@ -1,4 +1,6 @@
-
+.hidden {
+    display: none !important;
+}
 html {
     height: 100%;
 }
@@ -53,6 +55,32 @@ html {
     color: #000;
     background: #c9a24d;
 }
+
+.panel {
+    font-family: "Cinzel", serif;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: min(600px ,100%);
+    margin: 100px auto;
+    padding: 40px;
+    box-sizing: border-box;
+    border: solid #c9a24d;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.75);
+    color: azure;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /* Backstory page */
 .backstory-page {
