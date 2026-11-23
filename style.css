@@ -5,8 +5,12 @@ html {
     height: 100%;
 }
 
+.gameplay-screen {
+    background-image: url(assets/87f31205-d091-4eae-aa75-ae87fee29836.webp);
+}
+
 .starting-screen {
-    background-image: url(/assets/kingdom.webp);
+    background-image: url(assets/kingdom.webp);
     margin: 0;
     min-height: 100vh;
     min-height: 100dvh;
@@ -27,10 +31,16 @@ html {
     margin: 100px auto;
     padding: 40px;
     box-sizing: border-box;
-    border: solid #c9a24d;
+    border: 4px double #c9a24d;
     border-radius: 6px;
     background: rgba(0, 0, 0, 0.75);
+    box-shadow:
+        0 0 0 6px #000,                   
+        0 0 0 9px #6b4f1d,                
+        0 0 50px rgba(0, 0, 0, 0.9),      
+        inset 0 0 40px rgba(201, 162, 77, 0.15);
 }
+
 
 .title-screen img {
     width: 100%;
@@ -71,13 +81,37 @@ html {
     color: azure;
 }
 
+.panel p {
+    margin: 0;
+}
 
+#scene-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
 
+#choices {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
+.panel button {
+    font-family: "cinzel", serif;
+    cursor: pointer;
+    padding: 12px 20px;
+    border: 2px solid #c9a24d;
+    border-radius: 4px;
+    font-size: 15px;
+    background: #2a2118;
+    color: ivory;
+}
 
-
-
-
+.panel button:hover {
+    color: #000;
+    background: #c9a24d;
+}
 
 
 
@@ -104,6 +138,11 @@ html {
     border-radius: 6px;
     background: rgba(0, 0, 0, 0.75);
     color: azure;
+        box-shadow:
+        0 0 0 6px #000,                   
+        0 0 0 9px #6b4f1d,                
+        0 0 50px rgba(0, 0, 0, 0.9),      
+        inset 0 0 40px rgba(201, 162, 77, 0.15);
     
 }
 
