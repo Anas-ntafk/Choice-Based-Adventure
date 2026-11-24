@@ -1,9 +1,6 @@
 .hidden {
     display: none !important;
 }
-html {
-    height: 100%;
-}
 
 .gameplay-screen {
     background-image: url(assets/87f31205-d091-4eae-aa75-ae87fee29836.webp);

@@ -30,12 +30,74 @@ const scenes = {
     },
     villagers_result: {
         image: "",
-        text: `Henry questions the locals. A frightened farmer reveals that the men were carrying the Crown Prince's personal banner, heading north. "Maybe they're going to the old abandoned fortress loacted there" -the farmer said.
-        
-
-More importantly, he overheard them arguing about an upcoming march on the capital.`,
+        text: `Henry questions the locals. A frightened farmer reveals that the men were carrying the Crown Prince's personal banner, heading north. "Maybe they're going to the old abandoned fortress loacted there" -the farmer said.\nMore importantly, he overheard them arguing about an upcoming march on the capital.`,
         choices: [
             { text: "Continue north", next: "fortress" }
+        ]
+    },
+
+    fortress: {
+        image: "",
+        text: "Henry reaches the fortress and spots armed men wearing the Crown Prince's colors. Before he can get closer, a patrol notices him. He quickly hides behind a ruined stone wall as the soldiers begin searching the area.",
+        choices: [
+            {text: "Pretend to be a lost traveler.", next: "ending_arrested"},
+            {text: "Sneak through the woods.", next: "sneak_results"}
+        ]
+    },
+
+    ending_arrested: {
+        title: "Arrested",
+        image: "",
+        text: `Guard: "Well, well... Aren't you the little coward who follows Prince Matthias around? What brings a frightened little mouse this far from the palace?"
+
+            Henry: "I'm afraid you've mistaken me for someone else."
+
+            Guard: "Oh, I don't think so. I've heard plenty about you."
+
+            The guard orders his men to seize Henry. He is arrested before he can reach the fortress.`,
+
+        choices: [
+            {text: "continue", next: "gameover_arrested"}
+        ]
+    },
+
+    sneak_results: {
+        image: "",
+        text: `Henry notices that the soldiers standing guard are not of the Royal army perhaps they are mercenaries or something else! Henry crawls through the undergrowth, barely escaping the patrol. He reaches the fortress unnoticed.`,
+        choices: [
+            {text: "slip inside the fortress", next: "campA"}
+        ]
+    },
+
+    campA: {
+        image: "",
+        text:`While sneaking through the fortress grounds, Henry comes across a group of soldiers gathered around a secluded camp. Their hushed voices and suspicious behavior catch his attention. He stays hidden and listens carefully, eventually discovering that they are agents of a neighboring empire.`,
+        choices: [
+            {text: "continue", next: "campB"}
+        ]
+    },
+    campB: {
+        image: "",
+        text:`The men discuss their plans to exploit the coming civil war between the princes, weaken the kingdom from within, and seize its territories once the fighting has begun!`,
+        choices: [
+            {text: "Confront the Soldiers.", next: "ending_dead"},
+            {text: "Run and find the Crown Prince!", next: "run_result"}
+        ]
+    },
+
+    ending_dead: {
+        image: "", 
+        text: `Unable to contain himself, Henry steps out of hiding and demands an explanation. The soldiers are taken by surprise, but he notices a shadow of a tall figure behind him on the ground. Henry quickly turns ar....`,
+        choices: [
+            {text: "continue", next: "gameovr_dead"}
+        ]
+    },
+
+    run_result: {
+        image: "",
+        text: `Realizing the gravity of what he has uncovered, Henry decides that confronting the soldiers would be foolish. He makes a desperate run through the fortress, hoping to find the Crown Prince before the foreign agents can put their plans into motion.`,
+        choices: [
+            {text: "Keep running!", next: "firstPrinceFound"}
         ]
     },
 
