@@ -7,6 +7,13 @@ html {
 
 .gameplay-screen {
     background-image: url(assets/87f31205-d091-4eae-aa75-ae87fee29836.webp);
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    padding: 40px 100px;
 }
 
 .starting-screen {

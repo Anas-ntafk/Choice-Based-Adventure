@@ -30,7 +30,8 @@ const scenes = {
     },
     villagers_result: {
         image: "",
-        text: `Henry questions the locals. A frightened farmer reveals that the men were carrying the Crown Prince's personal banner, heading north. Maybe they're going to the old abandoned fortress.
+        text: `Henry questions the locals. A frightened farmer reveals that the men were carrying the Crown Prince's personal banner, heading north. "Maybe they're going to the old abandoned fortress loacted there" -the farmer said.
+        
 
 More importantly, he overheard them arguing about an upcoming march on the capital.`,
         choices: [
@@ -90,9 +91,38 @@ if (scene.image) {
     imgEl.classList.add('hidden')
 }
 
+choicesEl.innerHTML = ''
+scene.choices.forEach(choice => {
+    const btns = document.createElement('button')
+    btns.textContent = choice.text
+    btns.addEventListener('click', () => {
+        if (choice.action === 'title') {
+            resetGame()
+        } else {
+            goTo(choice.next)
+        }
+    })
+    choicesEl.appendChild(btns)
+})
+}
+
+function goTo(sceneId) {
+    state.sceneId = sceneId
+    render()
+}
+
+function startGame() {
+    state = {screen: 'game', sceneId: 'start'}
+    render()
+}
+
+function resetGame() {
+    state = {screen: 'title', sceneId: 'start'}
+    render()
+}
 
 //evemt listeners
-startBtn.addEventListener('click', startGame);
+startBtn.addEventListener('click', startGame)
 resetBtn.addEventListener('click', resetGame)
 backstoryBtn.addEventListener('click', () => {
     window.location.href = "backstory.html"
