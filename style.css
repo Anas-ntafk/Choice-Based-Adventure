@@ -154,7 +154,7 @@
 
 /* Backstory page */
 .backstory-page {
-    background-image: url(/assets/henryback.webp);
+    background-image: url(assets/backstory.webp);
     background-size: cover;
     background-repeat: no-repeat;
 }
