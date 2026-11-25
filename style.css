@@ -95,6 +95,10 @@
     object-fit: cover;
 }
 
+#scene-text {
+    white-space: pre-line;
+}
+
 #choices {
     display: flex;
     flex-direction: column;

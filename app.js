@@ -1,7 +1,7 @@
-const gameOverScene = (reason, retry) => {
+const gameOverScene = (reason, retry, image) => {
     return {
         title: "Game Over",
-        image: "",
+        image: image,
         text: reason,
         choices: [
             {text: "Try Again!", next: retry},
@@ -13,8 +13,9 @@ const gameOverScene = (reason, retry) => {
 //secnes / events
 const scenes = {
     start: {
-        image: "",
-        text: "After several days of travelling, Henry discovers an abandoned camp near the northern road. The remains suggest that a group of armed men stayed there recently. Among the debris, he finds a broken royal insignia belonging to the Crown Prince.",
+        image: "assets/abandoned_camp.jpg",
+        text: `After several days of travelling, Henry discovers an abandoned camp near the northern road. The remains suggest that a group of armed men stayed there recently. 
+        Among the debris, he finds a broken royal insignia belonging to the Crown Prince.`,
         choices: [
             {text: "Follow the tracks into the forest.", next: "tracks_result"},
             {text: "Ask the nearby villagers.", next: "villagers_result"} 
@@ -22,23 +23,25 @@ const scenes = {
     },
 
      tracks_result: {
-        image: "",
         text: `Henry follows the tracks and discovers that the armed men were heading north. He also notices that several horses were carrying supplies, suggesting the group intended to stay there for some time.`,
         choices: [
             { text: "Continue north", next: "fortress" }
         ]
     },
     villagers_result: {
-        image: "",
-        text: `Henry questions the locals. A frightened farmer reveals that the men were carrying the Crown Prince's personal banner, heading north. "Maybe they're going to the old abandoned fortress loacted there" -the farmer said.\nMore importantly, he overheard them arguing about an upcoming march on the capital.`,
+        image: "assets/villager.jpg",
+        text: `Henry questions the locals. A frightened farmer reveals that the men were carrying the Crown Prince's personal banner, heading north. 
+        "Maybe they're going to the old abandoned fortress loacted there" -the farmer said.
+         More importantly, he overheard them arguing about an upcoming march on the capital.`,
         choices: [
             { text: "Continue north", next: "fortress" }
         ]
     },
 
     fortress: {
-        image: "",
-        text: "Henry reaches the fortress and spots armed men wearing the Crown Prince's colors. Before he can get closer, a patrol notices him. He quickly hides behind a ruined stone wall as the soldiers begin searching the area.",
+        image: "assets/fortress.jpg",
+        text: `Henry reaches the fortress and spots armed men wearing the Crown Prince's colors. 
+        Before he can get closer, a patrol notices him. He quickly hides behind a ruined stone wall as the soldiers begin searching the area.`,
         choices: [
             {text: "Pretend to be a lost traveler.", next: "ending_arrested"},
             {text: "Sneak through the woods.", next: "sneak_results"}
@@ -47,8 +50,8 @@ const scenes = {
 
     ending_arrested: {
         title: "Arrested",
-        image: "",
-        text: `Guard: "Well, well... Aren't you the little coward who follows Prince Matthias around? What brings a frightened little mouse this far from the palace?"
+        image: "assets/talking-to-gaurd.jpg",
+        text: `Guard: "huh?... Aren't you the little coward who follows Prince Matthias around? What brings a frightened little mouse this far from the palace?"
 
             Henry: "I'm afraid you've mistaken me for someone else."
 
@@ -62,23 +65,22 @@ const scenes = {
     },
 
     sneak_results: {
-        image: "",
-        text: `Henry notices that the soldiers standing guard are not of the Royal army perhaps they are mercenaries or something else! Henry crawls through the undergrowth, barely escaping the patrol. He reaches the fortress unnoticed.`,
+        image: "assets/sneaking.jpg",
+        text: `Henry crawls through the undergrowth, barely escaping the patrol. He reaches the fortress unnoticed.`,
         choices: [
             {text: "slip inside the fortress", next: "campA"}
         ]
     },
 
     campA: {
-        image: "",
+        image: "assets/sus.jpg",
         text:`While sneaking through the fortress grounds, Henry comes across a group of soldiers gathered around a secluded camp. Their hushed voices and suspicious behavior catch his attention. He stays hidden and listens carefully, eventually discovering that they are agents of a neighboring empire.`,
         choices: [
             {text: "continue", next: "campB"}
         ]
     },
     campB: {
-        image: "",
-        text:`The men discuss their plans to exploit the coming civil war between the princes, weaken the kingdom from within, and seize its territories once the fighting has begun!`,
+        text:`The men discuss their plans to exploit the coming civil war, weaken the kingdom from within, and seize its territories once the fighting has begun!`,
         choices: [
             {text: "Confront the Soldiers.", next: "ending_dead"},
             {text: "Run and find the Crown Prince!", next: "run_result"}
@@ -87,9 +89,12 @@ const scenes = {
 
     ending_dead: {
         image: "", 
-        text: `Unable to contain himself, Henry steps out of hiding and demands an explanation. The soldiers are taken by surprise, but he notices a shadow of a tall figure behind him on the ground. Henry quickly turns ar....`,
+        text: `Unable to contain himself, Henry steps out of hiding and demands an explanation. 
+        The soldiers are taken by surprise, but then henry notices a shadow of a tall figure behind him on the ground!! 
+        
+        Henry quickly turns ar....`,
         choices: [
-            {text: "continue", next: "gameovr_dead"}
+            {text: "continue", next: "gameover_dead"}
         ]
     },
 
@@ -100,6 +105,67 @@ const scenes = {
             {text: "Keep running!", next: "firstPrinceFound"}
         ]
     },
+
+    firstPrinceFound: {
+        image: "assets/found-em.jpg",
+        text: `Henry rushes through the fortress corridors until he finally finds the Crown Prince. Wenceslas is surprised to see him and immediately recognizes the royal guard serving his younger brother.
+
+        Wenceslas: "Well, well... Look who has come all this way. If it isn't my little brother's loyal dog. Did Matthias finally figure out our uncle's ploy to strip me from my birthright?"
+
+        Henry looks at Wenceslas, momentarily confused by his words. but Then all the pieces began to fall into place.`,
+        choices: [
+            { text: "Speak your mind", next: "ending_falls" },
+            { text: "Explain what you discovered", next: "explain_results" }
+        ]
+    },
+    
+    ending_falls: {
+        image: "assets/ruin.jpg",
+        title: "the kingdom's fall",
+        text: `Henry, overwhelmed by everything he has witnessed, loses his temper.
+
+        Henry: "Your arrogance will be the downfall of this kingdom! Can't you see that you're being used? You're marching us towards ruin!"
+
+        Taken aback, Wenceslas takes it as an insult and a challenge to his authority. He orders his guards to knock Henry unconscious and throw him into the dungeons.`,
+        choices: [
+            {text: "continue", next: "gameover_falls"}
+        ]
+    },
+
+    explain_results: {
+        image: "assets/talking-to-1stprince.jpg",
+        text: `Henry swallows his pride and calmly explains everything he overheard, revealing the foreign agents' intentions and their plan to exploit the coming civil war.
+
+        Although Wenceslas is arrogant and reluctant to accept advice, he recognizes the seriousness of Henry's discoveries. He orders his men to investigate the strangers immediately.`,
+        choices: [
+            {text: "continue", next: "ending_saved"}
+        ]
+    },
+
+    ending_saved: {
+        title: "the kingdom endures",
+        image: "assets/kingdom.jpg",
+        text: `The foreign conspiracy is exposed. The King's brother supposed intention to strip Wenceslas of his birthright was fabricated, and the planned civil war is prevented. Wenceslas returns safely, and the kingdom is spared from invasion.
+
+        But only for now. The neighboring empire has not abandoned its ambitions, and its eyes remain fixed on the kingdom.
+
+        THE END`,
+        choices: [{text: "Back to Title screen", action: "title"}]
+    },
+
+        gameover_arrested: gameOverScene(
+        "Henry pretended to be a lost traveler, but the guards recognized him and arrested him.",
+        "fortress"),
+
+        gameover_dead: gameOverScene(
+        "",
+        "campB",
+        "assets/you-died.jpg"),
+
+        gameover_falls: gameOverScene(
+        `Henry lost his temper in front of the Crown Prince and was thrown into the dungeons.
+        the empire plans went through, and they siezed the kingdom after a crushing civil war`,
+        "firstPrinceFound"),
 
 }
 
@@ -172,6 +238,8 @@ scene.choices.forEach(choice => {
 
 function goTo(sceneId) {
     state.sceneId = sceneId
+    resetBtn.classList.remove('hidden')
+
     if (sceneId === 'campB') {
         objBEl.classList.remove('hidden')
     }
@@ -181,6 +249,19 @@ function goTo(sceneId) {
     if (sceneId === 'ending_saved') {
         objBEl.classList.add('done')
     }
+    if (sceneId === "gameover_arrested") {
+        resetBtn.classList.add('hidden')
+    }
+    if (sceneId === "gameover_dead") {
+        resetBtn.classList.add('hidden')
+    }
+    if (sceneId === "gameover_falls") {
+        resetBtn.classList.add('hidden')
+    }
+    if (sceneId === "ending_saved") {
+        resetBtn.classList.add('hidden')
+    }
+
     render()
 }
 
@@ -194,6 +275,9 @@ function resetGame() {
     state = {screen: 'title', sceneId: 'start'}
     objAEl.classList.add('hidden')
     objBEl.classList.add('hidden')
+    objAEl.classList.remove('done')
+    objBEl.classList.remove('done')
+    resetBtn.classList.remove('hidden')
     render()
 }
 
@@ -205,8 +289,3 @@ backstoryBtn.addEventListener('click', () => {
 })
 
 render ()
-
-
-
-
-
