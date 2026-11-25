@@ -117,6 +117,34 @@
     background: #c9a24d;
 }
 
+#objectives {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: "Cinzel", serif;
+}
+
+.objective {
+    padding: 10px 16px;
+    border: 2px solid #c9a24d;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.75);
+    color: ivory;
+    font-size: 14px;
+}
+
+.objective.done {
+    color: #4a7c3a;
+    text-decoration: line-through;
+}
+
+.objective.done::before {
+    content: "✅";
+}
+
 
 
 

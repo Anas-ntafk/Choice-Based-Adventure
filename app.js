@@ -111,6 +111,8 @@ const titleEl = document.querySelector('#scene-title')
 const textEl = document.querySelector('#scene-text')
 const imgEl = document.querySelector('#scene-img')
 const choicesEl = document.querySelector('#choices')
+const objAEl = document.querySelector('#obj1')
+const objBEl = document.querySelector('#obj2')
 
 
 //buttons
@@ -170,16 +172,28 @@ scene.choices.forEach(choice => {
 
 function goTo(sceneId) {
     state.sceneId = sceneId
+    if (sceneId === 'campB') {
+        objBEl.classList.remove('hidden')
+    }
+    if (sceneId === 'firstPrinceFound') {
+        objAEl.classList.add('done')
+    }
+    if (sceneId === 'ending_saved') {
+        objBEl.classList.add('done')
+    }
     render()
 }
 
 function startGame() {
     state = {screen: 'game', sceneId: 'start'}
+    objAEl.classList.remove('hidden')
     render()
 }
 
 function resetGame() {
     state = {screen: 'title', sceneId: 'start'}
+    objAEl.classList.add('hidden')
+    objBEl.classList.add('hidden')
     render()
 }
 
