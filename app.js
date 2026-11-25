@@ -120,7 +120,7 @@ const scenes = {
     },
     
     ending_falls: {
-        image: "assets/ruin.jpg",
+        image: "",
         title: "the kingdom's fall",
         text: `Henry, overwhelmed by everything he has witnessed, loses his temper.
 
@@ -165,7 +165,8 @@ const scenes = {
         gameover_falls: gameOverScene(
         `Henry lost his temper in front of the Crown Prince and was thrown into the dungeons.
         the empire plans went through, and they siezed the kingdom after a crushing civil war`,
-        "firstPrinceFound"),
+        "firstPrinceFound",
+        "assets/ruin.jpg"),
 
 }
 
