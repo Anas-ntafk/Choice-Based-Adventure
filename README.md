@@ -1,21 +1,41 @@
 # Choice-Based-Adventure
-## Project Planning
-
-- [Project board](https://github.com/users/Anas-ntafk/projects/2/views/1)
-<img width="1451" height="549" alt="game-1-planning" src="https://github.com/user-attachments/assets/fcaeeea6-92bc-48de-baf3-8ac52fad26bc" />
 
 
 
+![alt text](assets/game.png)
 
-### Game Description
-A choice-based adventure game where players make decisions that shape the progression and outcome of the story. Every choice can lead to different events, challenges, and endings.
 
-### Sprint 1
 
-Goal: The player would go through 4 different pages of choices, The end goal is one Bad ending, one good ending, and one total failure (game ends before reaching the last set of choices)
+### getting started
+- to play the game, click this [Link](https://anas-ntafk.github.io/Choice-Based-Adventure/)
 
-Start: [16 NOV]
-End: [24 NOV]
+The legend of Henry: the lost prince is A choice-based adventure game where you play as the Kingdom's second prince's Royal Gaurd Henry. players make decisions that shape the progression and outcome of the story. Every choice can lead to different events, challenges, and endings.
+to win the game the player must find the prince with a favorable outcome.
+
 
 ### Credits 
-- image in the game starting page is from Chatpgt.com
+- background images and scene images were genrated using chatgpt.com
+- "YOU DIED" image is from studio fromsoftware games
+- this section of css was made with help of chatgpt:
+        box-shadow:
+        0 0 0 6px #000,                   
+        0 0 0 9px #6b4f1d,                
+        0 0 50px rgba(0, 0, 0, 0.9),      
+        inset 0 0 40px rgba(201, 162, 77, 0.15);
+- this section of css was made with help of chatgpt:
+    .objective.done::before {
+        content: "✅";
+}
+- the main character backstory was inspired from the backstory of the main character of the game "Kingdom Come Deliverance"
+
+
+### technologies used 
+- HTML
+- CSS
+- JAVASCRIPT
+
+### Next steps
+- making the objectives fail 
+- adding sound effects for the choices buttons
+- background sounds for some scenes 
+- narration  

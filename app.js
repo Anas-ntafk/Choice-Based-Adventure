@@ -10,7 +10,7 @@ const gameOverScene = (reason, retry, image) => {
     }
 } 
 
-//secnes / events
+
 const scenes = {
     start: {
         image: "assets/abandoned_camp.jpg",
@@ -181,7 +181,7 @@ const objAEl = document.querySelector('#obj1')
 const objBEl = document.querySelector('#obj2')
 
 
-//buttons
+
 const startBtn = document.querySelector('#New-game')
 const backstoryBtn = document.querySelector('#story')
 const resetBtn = document.querySelector('#reset-btn')
@@ -281,7 +281,7 @@ function resetGame() {
     render()
 }
 
-//evemt listeners
+
 startBtn.addEventListener('click', startGame)
 resetBtn.addEventListener('click', resetGame)
 backstoryBtn.addEventListener('click', () => {
